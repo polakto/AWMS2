@@ -37,6 +37,7 @@ public class ExampleTest extends InstrumentationTestCase {
     public void test5() throws Exception {
         final int expected = 6;
         final int reality = 6;
+
         assertEquals(expected, reality);
     }
 }
