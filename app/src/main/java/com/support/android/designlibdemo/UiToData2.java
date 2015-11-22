@@ -10,7 +10,7 @@ public interface UiToData2 {
     /**
      * DASHBOARD TAB FUNCTIONALITY
      * these methods is needed for dashboard tab in app
-     * only must to do in class
+     * only must to do in classiuhii
      */
 
     /**
