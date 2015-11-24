@@ -50,7 +50,7 @@ public class DashboardFragment extends Fragment {
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist(Cheeses.sCheeseStrings, 30)));
+                getRandomSublist(Cheeses.sCheeseStrings, 5)));
     }
 
     private List<String> getRandomSublist(String[] array, int amount) {
