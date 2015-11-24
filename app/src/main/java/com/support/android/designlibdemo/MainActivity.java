@@ -100,11 +100,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * 3T - Here we can set up our tabs and screens.
+     * @param viewPager
+     */
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new CheeseListFragment(), getString(R.string.tab_dashboard));
-        adapter.addFragment(new CheeseListFragment(), getString(R.string.tab_transactions));
-        //adapter.addFragment(new CheeseListFragment(), getString(R.string.tab_kpis));
+        adapter.addFragment(new DashboardFragment(), getString(R.string.tab_dashboard));
+        adapter.addFragment(new TransactionsFragment(), getString(R.string.tab_transactions));
+        //for other there is only default definition of screen
         adapter.addFragment(new CheeseListFragment(), getString(R.string.tab_other));
         viewPager.setAdapter(adapter);
     }

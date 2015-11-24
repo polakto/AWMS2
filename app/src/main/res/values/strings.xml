@@ -30,5 +30,6 @@
   <string name="tab_transactions">Transactions</string>
   <string name="tab_kpis">KPIs</string>
   <string name="tab_other">Other</string>
+  <string name="hello_world">Hello world DASHBOARD</string>
 
 </resources>
