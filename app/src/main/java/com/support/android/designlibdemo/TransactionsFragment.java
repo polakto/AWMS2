@@ -42,7 +42,7 @@ public class TransactionsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         RecyclerView rv = (RecyclerView) inflater.inflate(
-                R.layout.fragment_dashboard_list, container, false);
+                R.layout.fragment_transactions_list, container, false);
         setupRecyclerView(rv);
         return rv;
     }
