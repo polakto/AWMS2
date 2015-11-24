@@ -33,6 +33,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -49,26 +50,24 @@ public class DashboardFragment extends Fragment {
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist(Cheeses.sCheeseStrings, 5)));
+        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), getData()));
     }
 
-    private List<String> getRandomSublist(String[] array, int amount) {
-        ArrayList<String> list = new ArrayList<>(amount);
-        Random random = new Random();
-        while (list.size() < amount) {
-            list.add(array[random.nextInt(array.length)]);
-        }
-        return list;
+    private List<String> getData() {
+        return SecondDataLayer.getArtificialDashboardData();
     }
 
-    public static class SimpleStringRecyclerViewAdapter
-            extends RecyclerView.Adapter<SimpleStringRecyclerViewAdapter.ViewHolder> {
+    /**
+     * Page content manager CLASS. This is just for this class - DASHBOARD screen. There are defines all items on one screen.
+     */
+    public static class SimpleStringRecyclerViewAdapter extends RecyclerView.Adapter<SimpleStringRecyclerViewAdapter.ViewHolder> {
 
+        //ATTRIBUTES
         private final TypedValue mTypedValue = new TypedValue();
         private int mBackground;
         private List<String> mValues;
 
+        //SUBCLASS
         public static class ViewHolder extends RecyclerView.ViewHolder {
             public String mBoundString;
 

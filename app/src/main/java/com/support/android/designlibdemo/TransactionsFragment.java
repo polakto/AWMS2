@@ -49,17 +49,11 @@ public class TransactionsFragment extends Fragment {
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist(Cheeses.sCheeseStrings, 30)));
+        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), getData()));
     }
 
-    private List<String> getRandomSublist(String[] array, int amount) {
-        ArrayList<String> list = new ArrayList<>(amount);
-        Random random = new Random();
-        while (list.size() < amount) {
-            list.add(array[random.nextInt(array.length)]);
-        }
-        return list;
+    private List<String> getData() {
+        return SecondDataLayer.getArtificialTransactionsData();
     }
 
     public static class SimpleStringRecyclerViewAdapter
