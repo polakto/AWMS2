@@ -1,4 +1,4 @@
-package com.support.android.designlibdemo;
+package interfaces;
 
 import java.util.Date;
 

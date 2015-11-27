@@ -1,8 +1,10 @@
-package com.support.android.designlibdemo;
+package data;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import interfaces.UiToData2;
 
 /**
  * Created by Dell on 24.11.2015.

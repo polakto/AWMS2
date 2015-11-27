@@ -2,8 +2,6 @@ package com.support.android.designlibdemo.tests;
 
 import android.test.InstrumentationTestCase;
 
-import com.support.android.designlibdemo.subjectOfTesting;
-
 /**
  * Created by Dell on 19.11.2015.
  */

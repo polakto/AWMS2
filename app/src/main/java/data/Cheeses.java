@@ -18,7 +18,9 @@
  * This class DATA storage. - artificial data for our project.
  */
 
-package com.support.android.designlibdemo;
+package data;
+
+import com.support.android.designlibdemo.R;
 
 import java.util.Random;
 

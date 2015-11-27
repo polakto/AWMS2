@@ -32,10 +32,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
+
+import data.Cheeses;
+import data.SecondDataLayer;
 
 public class DashboardFragment extends Fragment {
 
@@ -53,12 +53,18 @@ public class DashboardFragment extends Fragment {
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), getData()));
     }
 
+    /**
+     * DATA PACKAGE INPUT
+     * @return
+     */
     private List<String> getData() {
         return SecondDataLayer.getArtificialDashboardData();
     }
 
     /**
-     * Page content manager CLASS. This is just for this class - DASHBOARD screen. There are defines all items on one screen.
+     * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     * + Page content manager CLASS. This is just for this class - DASHBOARD screen. There are defines all items on one screen. +
+     * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
      */
     public static class SimpleStringRecyclerViewAdapter extends RecyclerView.Adapter<SimpleStringRecyclerViewAdapter.ViewHolder> {
 
@@ -67,7 +73,9 @@ public class DashboardFragment extends Fragment {
         private int mBackground;
         private List<String> mValues;
 
-        //SUBCLASS
+        // ++++++++++
+        // SUBCLASS +
+        // ++++++++++
         public static class ViewHolder extends RecyclerView.ViewHolder {
             public String mBoundString;
 
@@ -92,12 +100,24 @@ public class DashboardFragment extends Fragment {
             return mValues.get(position);
         }
 
+        /**++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+         * THIS IS MAIN ENGINE METHOD
+         * @param context - activity from which this was called from
+         * @param items - List of strings for resolver
+         **++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+         */
         public SimpleStringRecyclerViewAdapter(Context context, List<String> items) {
             context.getTheme().resolveAttribute(R.attr.selectableItemBackground, mTypedValue, true);
             mBackground = mTypedValue.resourceId;
             mValues = items;
         }
 
+        /**
+         *DEFINITION OF LIST ITEM
+         * @param parent
+         * @param viewType
+         * @return
+         */
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
@@ -133,4 +153,6 @@ public class DashboardFragment extends Fragment {
             return mValues.size();
         }
     }
+
+
 }

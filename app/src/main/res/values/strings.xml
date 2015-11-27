@@ -31,5 +31,6 @@
   <string name="tab_kpis">KPIs</string>
   <string name="tab_other">Other</string>
   <string name="hello_world">Hello world DASHBOARD</string>
+    <string name="title_activity_add_transaction">AddTransactionActivity</string>
 
 </resources>

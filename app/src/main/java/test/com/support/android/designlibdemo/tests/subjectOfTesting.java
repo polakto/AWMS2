@@ -1,4 +1,4 @@
-package com.support.android.designlibdemo;
+package com.support.android.designlibdemo.tests;
 
 /**
  * Created by Dell on 19.11.2015.
