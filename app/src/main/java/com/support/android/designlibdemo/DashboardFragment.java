@@ -32,25 +32,32 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.HashMap;
 import java.util.List;
 
 import data.Cheeses;
+import data.DataLayer;
 import data.SecondDataLayer;
 
 public class DashboardFragment extends Fragment {
+    public HashMap myDataset = new DataLayer().getTransactions();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         RecyclerView rv = (RecyclerView) inflater.inflate(
                 R.layout.fragment_dashboard_list, container, false);
+        rv.setHasFixedSize(true);
         setupRecyclerView(rv);
         return rv;
     }
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), getData()));
+        //recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), getData()));
+
+
+        recyclerView.setAdapter(new MyAdapter(myDataset));
     }
 
     /**
