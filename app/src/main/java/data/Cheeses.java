@@ -29,7 +29,7 @@ public class Cheeses {
     private static final Random RANDOM = new Random();
 
     public static int getRandomCheeseDrawable() {
-        switch (RANDOM.nextInt(6)) {
+        switch (RANDOM.nextInt(12)) {
             default:
             case 0:
                 return R.drawable.commodity_1;
@@ -43,6 +43,18 @@ public class Cheeses {
                 return R.drawable.commodity_5;
             case 5:
                 return R.drawable.commodity_6;
+            case 6:
+                return R.drawable.commodity_7;
+            case 7:
+                return R.drawable.commodity_8;
+            case 8:
+                return R.drawable.commodity_9;
+            case 9:
+                return R.drawable.commodity_10;
+            case 10:
+                return R.drawable.commodity_11;
+            case 11:
+                return R.drawable.commodity_12;
         }
     }
 
