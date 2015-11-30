@@ -35,10 +35,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     COLUMN_TRANS_ID INTEGER PRIMARY KEY AUTOINCREMENT, COLUMN_TRANS_SUBJECT_ID INTEGER,
     FOREIGN KEY (COLUMN_TRANS_SUBJECT_ID) REFERENCES TABLE_SubjectS(COLUMN_SUBJECT_ID)
             );*/
-   private static final String SQL_CREATE_TABLE_TRANSACTIONS = "CREATE TABLE " + TABLE_TRANSACTIONS + "("
+    private static final String SQL_CREATE_TABLE_TRANSACTIONS = "CREATE TABLE " + TABLE_TRANSACTIONS + "("
             + COLUMN_TRANS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            +"transSubjectId INTEGER NOT NULL,"
-            + COLUMN_TRANS_SUBJECT_ID + " INTEGER REFERENCES " + TABLE_SubjectS + ","
+            + COLUMN_TRANS_SUBJECT_ID + " INTEGER NOT NULL REFERENCES " + TABLE_SubjectS + ","
             + COLUMN_TRANS_TRANS_Status+ " INTEGER NOT NULL ,"
             + COLUMN_TRANS_DATE + " INTEGER, "
             + COLUMN_TRANS_QUANTITY + " TEXT NOT NULL, "
@@ -48,8 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String SQL_CREATE_TABLE_Subjects = "CREATE TABLE " + TABLE_SubjectS + "("
             + COLUMN_SUBJECT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            +"subjectUomId INTEGER NOT NULL,"
-            + COLUMN_SUBJECT_UOM_ID + " INTEGER REFERENCES " + TABLE_UoMS + ","
+            + COLUMN_SUBJECT_UOM_ID +" INTEGER NOT NULL REFERENCES " + TABLE_UoMS + ","
             + COLUMN_SUBJECT_NAME +"TEXT NOT NULL"+");";
 
     public DatabaseHelper(Context context) {

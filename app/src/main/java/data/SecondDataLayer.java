@@ -1,7 +1,9 @@
 package data;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import interfaces.UiToData2;
@@ -81,6 +83,29 @@ public class SecondDataLayer implements UiToData2 {
         sArtificialDataDashboard.add("MILK 113 234.09 tons");
         return sArtificialDataDashboard;
     };
+
+    public static ArrayList getAllCommodities(){
+        ArrayList<HashMap> myList = new ArrayList();
+
+        HashMap commodity = new HashMap();
+        commodity.put("id", 0);
+        commodity.put("name", "wood");
+        commodity.put("quantity", 29.87);
+        commodity.put("picture", "commodity_11.jpg");
+        myList.add(0, commodity);
+
+        HashMap commodity2 = new HashMap();
+        commodity2.put("id", 1);
+        commodity2.put("name", "sand");
+        commodity2.put("quantity", 129.87);
+        commodity2.put("picture", "commodity_12.jpg");
+        myList.add(1, commodity2);
+
+
+
+
+        return myList;
+    }
 
     /**
      * These method is just for our example.

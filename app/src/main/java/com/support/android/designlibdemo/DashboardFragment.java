@@ -32,6 +32,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -40,7 +41,7 @@ import data.DataLayer;
 import data.SecondDataLayer;
 
 public class DashboardFragment extends Fragment {
-    public HashMap myDataset = new DataLayer().getTransactions();
+    public ArrayList myDataset = new SecondDataLayer().getAllCommodities();
 
     @Nullable
     @Override

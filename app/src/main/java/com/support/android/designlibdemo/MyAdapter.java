@@ -6,13 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import data.DataLayer;
 
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private HashMap mDataset;
+    private ArrayList mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -34,7 +36,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
     */
 
-    public MyAdapter(HashMap myDataset) {
+    public MyAdapter(ArrayList myDataset) {
 
         mDataset = myDataset;
     }
@@ -61,13 +63,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - replace the contents of the view with that element
 
         //holder.mTextView.setText(mDataset[position]);
+
         View pomocnik = holder.itemView;
         TextView pomocnik2 = (TextView) pomocnik.findViewById(R.id.info_text);
-        //pomocnik2.setText(mDataset[position]);
 
-        TextView pomocnik3 = (TextView) pomocnik.findViewById(R.id.info_text2);
-        DataLayer zdrojoveData = new DataLayer();
-        pomocnik3.setText(zdrojoveData.getType(position));
+        HashMap myName = (HashMap) mDataset.get(position);
+        pomocnik2.setText(myName.get("name").toString());
+        //TextView pomocnik3 = (TextView) pomocnik.findViewById(R.id.info_text2);
+        //DataLayer zdrojoveData = new DataLayer();
+        //pomocnik3.setText(zdrojoveData.getType(position));
 
 
     }
