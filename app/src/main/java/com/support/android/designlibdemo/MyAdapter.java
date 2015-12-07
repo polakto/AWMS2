@@ -1,20 +1,28 @@
 package com.support.android.designlibdemo;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import data.Cheeses;
 import data.DataLayer;
 
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private ArrayList mDataset;
+    private Context mContext;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -36,8 +44,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
     */
 
-    public MyAdapter(ArrayList myDataset) {
-
+    public MyAdapter(ArrayList myDataset, Context myContext) {
+        mContext = myContext;
         mDataset = myDataset;
     }
 
@@ -61,17 +69,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-
         //holder.mTextView.setText(mDataset[position]);
+        HashMap item = (HashMap) mDataset.get(position);
 
         View pomocnik = holder.itemView;
         TextView pomocnik2 = (TextView) pomocnik.findViewById(R.id.info_text);
+        pomocnik2.setText(item.get("name").toString());
 
-        HashMap myName = (HashMap) mDataset.get(position);
-        pomocnik2.setText(myName.get("name").toString());
-        //TextView pomocnik3 = (TextView) pomocnik.findViewById(R.id.info_text2);
-        //DataLayer zdrojoveData = new DataLayer();
-        //pomocnik3.setText(zdrojoveData.getType(position));
+        View pomocnikus = holder.itemView;
+        TextView pomocnikus2 = (TextView) pomocnikus.findViewById(R.id.info_text2);
+        pomocnikus2.setText(item.get("quantity").toString());
+
+        View pomocnikPic = holder.itemView;
+        ImageView pomocnikPic2 = (ImageView) pomocnikPic.findViewById(R.id.commodity_picture);
+
+
+        int resourceId = mContext.getResources().getIdentifier(item.get("picture").toString(), "drawable", mContext.getPackageName());
+        pomocnikPic2.setBackgroundResource(resourceId);
+
+
+
 
 
     }

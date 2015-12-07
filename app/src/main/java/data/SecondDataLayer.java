@@ -1,5 +1,7 @@
 package data;
 
+import com.support.android.designlibdemo.R;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
@@ -91,15 +93,29 @@ public class SecondDataLayer implements UiToData2 {
         commodity.put("id", 0);
         commodity.put("name", "wood");
         commodity.put("quantity", 29.87);
-        commodity.put("picture", "commodity_11.jpg");
+        commodity.put("picture", "commodity_11");
         myList.add(0, commodity);
 
         HashMap commodity2 = new HashMap();
         commodity2.put("id", 1);
-        commodity2.put("name", "sand");
+        commodity2.put("name", "coffee");
         commodity2.put("quantity", 129.87);
-        commodity2.put("picture", "commodity_12.jpg");
+        commodity2.put("picture", "commodity_3");
         myList.add(1, commodity2);
+
+        HashMap commodity3 = new HashMap();
+        commodity3.put("id", 2);
+        commodity3.put("name", "rock");
+        commodity3.put("quantity", 11129.87);
+        commodity3.put("picture", "commodity_12");
+        myList.add(2, commodity3);
+
+        HashMap commodity4 = new HashMap();
+        commodity4.put("id", 3);
+        commodity4.put("name", "sand");
+        commodity4.put("quantity", 129.87);
+        commodity4.put("picture", "commodity_8");
+        myList.add(3, commodity4);
 
 
 

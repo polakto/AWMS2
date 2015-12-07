@@ -58,7 +58,7 @@ public class DashboardFragment extends Fragment {
         //recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), getData()));
 
 
-        recyclerView.setAdapter(new MyAdapter(myDataset));
+        recyclerView.setAdapter(new MyAdapter(myDataset, getContext()));
     }
 
     /**

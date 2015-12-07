@@ -16,6 +16,8 @@
 -->
 
 <resources>
+    <color name="gray">#eaeaea</color>
+
 
     <style name="Theme.DesignDemo" parent="Base.Theme.DesignDemo">
     </style>
