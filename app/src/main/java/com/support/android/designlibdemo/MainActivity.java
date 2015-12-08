@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new DashboardFragment(), getString(R.string.tab_dashboard));
         adapter.addFragment(new TransactionsFragment(), getString(R.string.tab_transactions));
         //for other there is only default definition of screen
-        adapter.addFragment(new CheeseListFragment(), getString(R.string.tab_other));
+        //adapter.addFragment(new CheeseListFragment(), getString(R.string.tab_other));
         viewPager.setAdapter(adapter);
     }
 

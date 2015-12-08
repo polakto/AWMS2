@@ -32,12 +32,14 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import data.Cheeses;
 import data.SecondDataLayer;
 
 public class TransactionsFragment extends Fragment {
+    public ArrayList myDataset = new SecondDataLayer().getAllTransactions();
 
     @Nullable
     @Override
@@ -50,13 +52,19 @@ public class TransactionsFragment extends Fragment {
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), getData()));
+        //recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), getData()));
+
+        recyclerView.setAdapter(new MyAdapterTrans(myDataset, getContext()));
     }
 
     private List<String> getData() {
-        return SecondDataLayer.getArtificialTransactionsData();
+        return SecondDataLayer.getAllTransactions();
     }
 
+    /**++++++++++++++++++++++++++++++
+     * + Transactions adapter - UNUSED!!!!
+     * ++++++++++++++++++++++++++++++
+     */
     public static class SimpleStringRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleStringRecyclerViewAdapter.ViewHolder> {
 

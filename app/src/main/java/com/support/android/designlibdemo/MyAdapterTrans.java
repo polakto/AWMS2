@@ -1,8 +1,7 @@
 package com.support.android.designlibdemo;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,19 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-
-import data.Cheeses;
-import data.DataLayer;
 
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapterTrans extends RecyclerView.Adapter<MyAdapterTrans.ViewHolder> {
     private ArrayList mDataset;
     private Context mContext;
 
@@ -46,18 +39,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
     */
 
-    public MyAdapter(ArrayList myDataset, Context myContext) {
+    public MyAdapterTrans(ArrayList myDataset, Context myContext) {
         mContext = myContext;
         mDataset = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public MyAdapterTrans.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card, parent, false);
+                .inflate(R.layout.list_item, parent, false);
 
         //TextView pomocnik = (TextView) v.findViewById(R.id.info_text);
         //pomocnik.setText("Goliasious");
@@ -72,25 +65,36 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         //holder.mTextView.setText(mDataset[position]);
+
+
         HashMap item = (HashMap) mDataset.get(position);
 
         View pomocnik = holder.itemView;
-        TextView pomocnik2 = (TextView) pomocnik.findViewById(R.id.info_text);
-        pomocnik2.setText(item.get("name").toString());
+        TextView pomocnik2 = (TextView) pomocnik.findViewById(R.id.commodity);
+        pomocnik2.setText(item.get("commodity").toString());
+
+        View pomocnik6 = holder.itemView;
+        TextView pomocnik61 = (TextView) pomocnik6.findViewById(R.id.date);
+        pomocnik61.setText(item.get("date").toString());
 
         View pomocnikus = holder.itemView;
-        TextView pomocnikus2 = (TextView) pomocnikus.findViewById(R.id.info_text2);
-
+        TextView pomocnikus2 = (TextView) pomocnikus.findViewById(R.id.quantity);
         NumberFormat formatter = new DecimalFormat("###,###,###.##");
-
         double theNumber = (double) item.get("quantity");
+        String prefix = "";
+        if (item.get("type") == "IN") {
+            pomocnikus2.setTextColor(Color.parseColor("#219c1d"));
+            prefix = "+ ";
+        }else{
+            pomocnikus2.setTextColor(Color.parseColor("#e41616"));
+            prefix = "- ";
+        }
+        pomocnikus2.setText(prefix + formatter.format(theNumber).toString() + " " + item.get("uom").toString());
 
 
-        pomocnikus2.setText(formatter.format(theNumber).toString() + " " + item.get("uom").toString());
+
         View pomocnikPic = holder.itemView;
-        ImageView pomocnikPic2 = (ImageView) pomocnikPic.findViewById(R.id.commodity_picture);
-
-
+        ImageView pomocnikPic2 = (ImageView) pomocnikPic.findViewById(R.id.avatar);
         int resourceId = mContext.getResources().getIdentifier(item.get("picture").toString(), "drawable", mContext.getPackageName());
         pomocnikPic2.setBackgroundResource(resourceId);
 

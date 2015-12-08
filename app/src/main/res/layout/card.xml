@@ -18,15 +18,22 @@
         android:layout_marginRight="7dp"
     card_view:cardCornerRadius="0dp"
     card_view:cardElevation="4dp">
+    <!--  What to display there?  -->
     <!--
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/cheese_1"
-        android:layout_marginBottom="0dp"/>-->
+
+    1 - status of commodity
+    1.1 - calculated status of commodity
+    1.2 - quantifier of commodity
+    2 - commodity name
+    3 - average purchase price
+    4 - advised sale price
+
+    -->
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
 
         <ImageView
                 android:layout_width="match_parent"
@@ -36,16 +43,18 @@
                 android:background="@drawable/commodity_1"/>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginRight="25dp">
             <TextView
                 android:id="@+id/info_text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2. row."
-                android:paddingTop="20dp"
+                android:text="2. row"
+                android:paddingTop="15dp"
                 android:textColor="@color/material_grey_100"
                 android:fontFamily="sans-serif-thin"
-                android:textSize="80dp"/>
+                android:textSize="65dp"
+                android:layout_alignParentRight="true"/>
 
             <TextView
                 android:id="@+id/info_text"
@@ -54,12 +63,11 @@
                 android:text="1. row"
                 android:textColor="@color/material_grey_100"
                 android:fontFamily="sans-serif-thin"
-                android:textSize="40dp"
+                android:textSize="35dp"
                 android:layout_below="@+id/info_text2"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentRight="true" />
             </RelativeLayout>
-
+<!--
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,6 +115,7 @@
                 android:text="3. row."
                 android:layout_marginBottom="5dp"/>
         </LinearLayout>
+            -->
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
