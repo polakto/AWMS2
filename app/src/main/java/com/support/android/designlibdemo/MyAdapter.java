@@ -2,6 +2,7 @@ package com.support.android.designlibdemo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -31,12 +32,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
+        public String mCommodityName;
         public View mTextView;
-        public ViewHolder(View v) {
+        public Context mojContext;
+        public ViewHolder(View v, Context myContext, String commodityName) {
             super(v);
             mTextView = v;
+            mojContext = myContext;
+            mCommodityName = commodityName;
+
+
+
+
         }
     }
+
+
 
     // Provide a suitable constructor (depends on the kind of dataset)
     /*
@@ -62,7 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         //TextView pomocnik = (TextView) v.findViewById(R.id.info_text);
         //pomocnik.setText("Goliasious");
 
-        ViewHolder vh = new ViewHolder(v);
+        ViewHolder vh = new ViewHolder(v, mContext, "DEMO COMMODITY NAME");
         return vh;
     }
 
@@ -72,7 +83,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         //holder.mTextView.setText(mDataset[position]);
+
         HashMap item = (HashMap) mDataset.get(position);
+
+        final String myCommodityName2 = item.get("name").toString();
 
         View pomocnik = holder.itemView;
         TextView pomocnik2 = (TextView) pomocnik.findViewById(R.id.info_text);
@@ -93,6 +107,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         int resourceId = mContext.getResources().getIdentifier(item.get("picture").toString(), "drawable", mContext.getPackageName());
         pomocnikPic2.setBackgroundResource(resourceId);
+
+
+        holder.mTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, CommodityDetailActivity.class);
+                intent.putExtra(CommodityDetailActivity.EXTRA_NAME, myCommodityName2);
+
+                context.startActivity(intent);
+            }
+        });
 
 
 

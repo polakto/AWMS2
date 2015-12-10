@@ -18,17 +18,6 @@
         android:layout_marginRight="7dp"
     card_view:cardCornerRadius="0dp"
     card_view:cardElevation="4dp">
-    <!--  What to display there?  -->
-    <!--
-
-    1 - status of commodity
-    1.1 - calculated status of commodity
-    1.2 - quantifier of commodity
-    2 - commodity name
-    3 - average purchase price
-    4 - advised sale price
-
-    -->
 
         <RelativeLayout
             android:layout_width="wrap_content"

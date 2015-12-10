@@ -1,6 +1,7 @@
 package com.support.android.designlibdemo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,10 +25,12 @@ public class MyAdapterTrans extends RecyclerView.Adapter<MyAdapterTrans.ViewHold
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
+        public String mCommodityName;
         public View mTextView;
-        public ViewHolder(View v) {
+        public ViewHolder(View v, String commodityName) {
             super(v);
             mTextView = v;
+            mCommodityName = commodityName;
         }
     }
 
@@ -55,7 +58,7 @@ public class MyAdapterTrans extends RecyclerView.Adapter<MyAdapterTrans.ViewHold
         //TextView pomocnik = (TextView) v.findViewById(R.id.info_text);
         //pomocnik.setText("Goliasious");
 
-        ViewHolder vh = new ViewHolder(v);
+        ViewHolder vh = new ViewHolder(v, "DEMO TRANS ID");
         return vh;
     }
 
@@ -68,6 +71,8 @@ public class MyAdapterTrans extends RecyclerView.Adapter<MyAdapterTrans.ViewHold
 
 
         HashMap item = (HashMap) mDataset.get(position);
+
+        final String myTransId = item.get("id").toString();
 
         View pomocnik = holder.itemView;
         TextView pomocnik2 = (TextView) pomocnik.findViewById(R.id.commodity);
@@ -98,7 +103,15 @@ public class MyAdapterTrans extends RecyclerView.Adapter<MyAdapterTrans.ViewHold
         int resourceId = mContext.getResources().getIdentifier(item.get("picture").toString(), "drawable", mContext.getPackageName());
         pomocnikPic2.setBackgroundResource(resourceId);
 
-
+        holder.mTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, TransactionDetailActivity.class);
+                intent.putExtra(TransactionDetailActivity.EXTRA_NAME, myTransId);
+                context.startActivity(intent);
+            }
+        });
 
 
 

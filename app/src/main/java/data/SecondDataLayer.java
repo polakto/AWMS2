@@ -153,7 +153,7 @@ public class SecondDataLayer implements UiToData2 {
         transactions.add(0, transaction0);
 
         HashMap transaction1 = new HashMap();
-        transaction1.put("id", 0);
+        transaction1.put("id", 1);
         transaction1.put("commodity", "sand");
         transaction1.put("date", "3.6.2009");
         transaction1.put("quantity", 22.13);
@@ -163,7 +163,7 @@ public class SecondDataLayer implements UiToData2 {
         transactions.add(1, transaction1);
 
         HashMap transaction2 = new HashMap();
-        transaction2.put("id", 0);
+        transaction2.put("id", 2);
         transaction2.put("commodity", "coal");
         transaction2.put("date", "2.1.1996");
         transaction2.put("quantity", 19.34);
@@ -173,7 +173,7 @@ public class SecondDataLayer implements UiToData2 {
         transactions.add(2, transaction2);
 
         HashMap transaction3 = new HashMap();
-        transaction3.put("id", 0);
+        transaction3.put("id", 3);
         transaction3.put("commodity", "coffee");
         transaction3.put("date", "20.10.2015");
         transaction3.put("quantity", 15.90);
@@ -183,7 +183,7 @@ public class SecondDataLayer implements UiToData2 {
         transactions.add(3, transaction3);
 
         HashMap transaction4 = new HashMap();
-        transaction4.put("id", 0);
+        transaction4.put("id", 4);
         transaction4.put("commodity", "sand");
         transaction4.put("date", "3.6.2009");
         transaction4.put("quantity", 22.13);
@@ -193,7 +193,7 @@ public class SecondDataLayer implements UiToData2 {
         transactions.add(4, transaction4);
 
         HashMap transaction5 = new HashMap();
-        transaction5.put("id", 0);
+        transaction5.put("id", 5);
         transaction5.put("commodity", "coal");
         transaction5.put("date", "2.1.1996");
         transaction5.put("quantity", 19.34);
