@@ -32,5 +32,27 @@
   <string name="tab_other">Other</string>
   <string name="hello_world">Hello world DASHBOARD</string>
     <string name="title_activity_add_transaction">AddTransactionActivity</string>
+  <string name="hint_email">Insert email</string>
+  <string name="hint_date">Date</string>
+  <string name="hint_quantity">Quantity</string>
+  <string name="hint_value">Value</string>
 
-</resources>
+
+
+  <string-array name="country_arrays">
+    <item>coal</item>
+    <item>chocolate</item>
+    <item>coffee</item>
+    <item>grain</item>
+    <item>iron</item>
+    <item>meat</item>
+    <item>money</item>
+    <item>sand</item>
+    <item>waste</item>
+    <item>paint</item>
+    <item>wood</item>
+    <item>rock</item>
+  </string-array>
+
+
+    </resources>

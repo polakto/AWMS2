@@ -19,4 +19,5 @@
     <color name="window_background">#FFF5F5F5</color>
     <color name="red">#e41616</color>
     <color name="green">#219c1d</color>
+    <color name="white">#ffffff</color>
 </resources>

@@ -34,4 +34,5 @@ public class AddTransactionActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+
 }
