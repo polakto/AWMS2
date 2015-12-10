@@ -44,11 +44,13 @@ public class TransactionsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //((MainActivity) getActivity()).showFloatingButton();
         RecyclerView rv = (RecyclerView) inflater.inflate(
                 R.layout.fragment_transactions_list, container, false);
         setupRecyclerView(rv);
         return rv;
     }
+
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
@@ -137,4 +139,5 @@ public class TransactionsFragment extends Fragment {
             return mValues.size();
         }
     }
+
 }

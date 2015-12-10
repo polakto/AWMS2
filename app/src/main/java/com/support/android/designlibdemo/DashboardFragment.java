@@ -46,6 +46,9 @@ public class DashboardFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        ((MainActivity) getActivity()).hideFloatingButton();
+
+
         RecyclerView rv = (RecyclerView) inflater.inflate(
                 R.layout.fragment_dashboard_list, container, false);
         rv.setHasFixedSize(true);
@@ -161,6 +164,5 @@ public class DashboardFragment extends Fragment {
             return mValues.size();
         }
     }
-
 
 }

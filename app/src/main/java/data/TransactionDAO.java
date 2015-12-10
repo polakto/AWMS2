@@ -130,7 +130,7 @@ public class TransactionDAO {
     public List<TransactionModel> getAllTransactions() {
         List<TransactionModel> listTransactions = new ArrayList<TransactionModel>();
 
-        Cursor cursor = tDatabase.query(DatabaseHelper.TABLE_SubjectS, tAllColumns,
+        Cursor cursor = tDatabase.query(DatabaseHelper.TABLE_TRANSACTIONS, tAllColumns,
                 null, null, null, null, null);
 
         cursor.moveToFirst();

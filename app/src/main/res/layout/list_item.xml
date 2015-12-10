@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceListItem"
             android:text="commodity"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:fontFamily="sans-serif-thin"/>
         <TextView
             android:id="@+id/date"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceListItem"
             android:text="##.##.####"
-            android:textSize="15dp"
+            android:textSize="10dp"
             android:fontFamily="sans-serif-thin"/>
     </LinearLayout>
 
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?attr/textAppearanceListItem"
         android:text="##,### t"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:fontFamily="sans-serif-thin"
         android:gravity="right"
         android:layout_weight="1"/>

@@ -169,4 +169,14 @@ public class MainActivity extends AppCompatActivity {
             return mFragmentTitles.get(position);
         }
     }
+
+    public void showFloatingButton(){
+        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        //fab.show();
+    }
+
+    public void hideFloatingButton(){
+        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        //fab.hide();
+    }
 }

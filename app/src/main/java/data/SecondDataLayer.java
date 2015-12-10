@@ -172,10 +172,6 @@ public class SecondDataLayer implements UiToData2 {
         transaction2.put("picture", "commodity_1");
         transactions.add(2, transaction2);
 
-
-
-
-
         HashMap transaction3 = new HashMap();
         transaction3.put("id", 0);
         transaction3.put("commodity", "coffee");
